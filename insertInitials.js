@@ -1,4 +1,12 @@
-const connection = require('./db');
+const mysql = require('mysql2');
+
+// DB 연결
+const connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: 'Mysql4344!', // ← 비밀번호 입력
+  database: 'game',
+});
 
 const initialsPairs = [
     { text1: "ㄱ", text2: "ㄱ" },
@@ -187,18 +195,19 @@ const initialsPairs = [
   
   
 
-  // 초성 쌍을 데이터베이스에 삽입하는 함수
+ // 삽입 함수
 function insertInitials() {
-    const query = 'INSERT INTO initials_pairs (text1, text2) VALUES ?';
-    const values = initialsPairs.map(pair => [pair.text1, pair.text2]);
-  
-    connection.query(query, [values], (err, results) => {
-      if (err) {
-        console.error('초성 쌍 추가 실패:', err);
-        return;
-      }
+  const query = 'INSERT INTO initials_pairs (text1, text2) VALUES ?';
+  const values = initialsPairs.map(pair => [pair.text1, pair.text2]);
+
+  connection.query(query, [values], (err, results) => {
+    if (err) {
+      console.error('초성 쌍 추가 실패:', err);
+    } else {
       console.log('초성 쌍이 성공적으로 추가되었습니다.');
-    });
-  }
-  
-  insertInitials(); // 호출해서 삽입
+    }
+    connection.end(); // 종료는 콜백 안에서!
+  });
+}
+
+insertInitials();
