@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>초성 게임</title>
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>초성 게임</h1>
+
+  <div id="randomQuote">초성</div>
+
+  <div class="player-inputs">
+    <h2>플레이어 1</h2>
+    <input type="text" id="player1Word" placeholder="단어 입력" />
+    <button onclick="submitWord(1)">제출</button>
+  </div>
+
+  <div class="player-inputs">
+    <h2>플레이어 2</h2>
+    <input type="text" id="player2Word" placeholder="단어 입력" />
+    <button onclick="submitWord(2)">제출</button>
+  </div>
+
+  <ul id="wordList"></ul>
+
+</body>
+</html>

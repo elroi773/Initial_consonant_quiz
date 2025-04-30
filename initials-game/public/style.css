@@ -1,0 +1,40 @@
+@font-face {
+  font-family: "PyeojinGothic-Bold";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2504-1@1.0/PyeojinGothic-Bold.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+body {
+  font-family: "PyeojinGothic-Bold";
+  text-align: center;
+  padding: 20px;
+}
+#randomQuote {
+  font-size: 2rem;
+  margin: 20px 0;
+  font-weight: bold;
+}
+.player-inputs {
+  margin: 20px 0;
+}
+input {
+  padding: 10px;
+  margin: 5px;
+  font-size: 1rem;
+}
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 10px;
+}
+#wordList {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+#wordList li {
+  margin: 5px 0;
+  font-size: 1.2rem;
+}
