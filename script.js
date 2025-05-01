@@ -1,3 +1,4 @@
+console.log(".");
 let currentInitial = "";
 
 // 서버에서 랜덤 초성 쌍 가져오기
@@ -41,8 +42,6 @@ function getInitials(word) {
   return result;
 }
 
-console.log(".")
-
 
 // 단어 제출 함수 (플레이어별)
 function submitWord(playerNumber) {
@@ -54,7 +53,7 @@ function submitWord(playerNumber) {
     alert("단어를 입력하세요!");
     return;
   }
-
+  
   const wordInitial = getInitials(word);
 
   if (wordInitial.startsWith(currentInitial)) {
