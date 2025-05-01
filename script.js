@@ -27,7 +27,7 @@ function getInitials(word) {
     "ㅆ", "ㅇ", "ㅈ", "ㅉ", "ㅊ",
     "ㅋ", "ㅌ", "ㅍ", "ㅎ"
   ];
-
+  
   let result = "";
   for (let i = 0; i < word.length; i++) {
     const code = word.charCodeAt(i) - 44032;
@@ -41,12 +41,15 @@ function getInitials(word) {
   return result;
 }
 
+console.log(".")
+
+
 // 단어 제출 함수 (플레이어별)
 function submitWord(playerNumber) {
   const wordInput = document.getElementById(`player${playerNumber}Word`);
   const wordList = document.getElementById("wordList");
   const word = wordInput.value.trim();
-
+  
   if (word === "") {
     alert("단어를 입력하세요!");
     return;
@@ -64,7 +67,6 @@ function submitWord(playerNumber) {
     wordInput.value = "";
   }
 }
-
 
 app.get('/random-initials', (req, res) => {
   console.log('GET /random-initials 요청이 왔습니다');  // 요청이 들어올 때 로그
